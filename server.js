@@ -21,7 +21,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: 'gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
+        origin: 'https://gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
         methods: ["GET", "POST"],
         credentials: true
     }
@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-    origin: 'gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
+    origin: 'https://gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
     credentials: true
 }));
 
