@@ -21,7 +21,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: 'gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
         methods: ["GET", "POST"],
         credentials: true
     }
@@ -31,7 +31,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'gigit-egbpfee6audkawdc.canadacentral-01.azurewebsites.net',
     credentials: true
 }));
 
@@ -42,7 +42,7 @@ connectDB();
 
 // Mount routers at /api
 // Serve static files from the client/build directory
-app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "./public/build")));
 
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
